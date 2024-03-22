@@ -1,1 +1,1 @@
-In file ONJ_submission1_report.pdf you can find our initital plan of work that will surely change when we get to the actual implementation and reasearch of the field. In folder report you can find the overleaf template of the report.
+In file *ONJ_submission1_report.pdf* you can find our initital plan of work that will surely change when we get to the actual implementation and reasearch of the field. In folder *report* you can find the overleaf template of the report.
