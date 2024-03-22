@@ -31,23 +31,24 @@
 %----------------------------------------------------------------------------------------
 
 % Header
-\JournalInfo{FRI Natural language processing course 2021}
+\JournalInfo{FRI Natural language processing course 2023/24}
 
 % Interim or final report
 \Archive{Project report} 
 %\Archive{Final report} 
 
 % Article title
-\PaperTitle{Natural language processing course Latex Template} 
+\PaperTitle{Conversations with Characters in Stories for Literacy - Quick, Customized Persona Bots from novels} 
 
 % Authors (student competitors) and their info
-\Authors{John Doe, Jane Doe, and Mike Smith}
+\Authors{David Aristovnik, Tara Rolih, Ana Strmčnik}
 
 % Advisors
-\affiliation{\textit{Advisors: Slavko Žitnik}}
+\affiliation{\textit{Advisor: Slavko Žitnik}}
 
 % Keywords
-\Keywords{Keyword1, Keyword2, Keyword3 ...}
+\Keywords{Literacy Enhancement, Conversational Agents, PersonaBots, Data Augmentation, Retrieval-Augmented Generation}
+
 \newcommand{\keywordname}{Keywords}
 
 
@@ -56,7 +57,7 @@
 %----------------------------------------------------------------------------------------
 
 \Abstract{
-The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here.
+This project addresses the declining literacy rates among young readers by leveraging character conversations from novels and stories to create engaging educational tools. Through corpus analysis, we aim to understand the dynamics of textual conversations between characters through their attributes and develop personaBots that embody the specific characters. These personaBots are designed to interact with users in a meaningful way, improving their literacy skills and making reading more appealing. Our approach includes reviewing related works on data augmentation, dialogue agents, and pedagogical agents with personality theory, as well as comparing existing services for creating persona bots. We utilize datasets such as the BookCorpus and The Gutenberg dataset for pretraining and fine-tuning our models on specific characters. The project involves preprocessing steps focused on steps like dialogue extraction and named entity recognition. We intend to use models from the HuggingFace library, augmented with retrieval methods to enhance the bot's knowledge and human interaction capabilities. Our evaluation strategy includes comparing our model's performance with other models and assessing its understanding of character-specific information and ability to simulate human-like conversations.
 }
 
 %----------------------------------------------------------------------------------------
@@ -75,158 +76,80 @@ The abstract goes here. The abstract goes here. The abstract goes here. The abst
 %----------------------------------------------------------------------------------------
 %	ARTICLE CONTENTS
 %----------------------------------------------------------------------------------------
-
 \section*{Introduction}
-	These latex files are intended to serve as a the template for the NLP course at FRI.  The template is adapted from the FRI Data Science Project Competition. template  If you find mistakes in the template or have problems using it, please consult Jure Demšar (\href{mailto:jure.demsar@fri.uni-lj.si}{jure.demsar@fri.uni-lj.si}).
-	
-	In the Introduction section you should write about the relevance of your work (what is the purpose of the project, what will we solve) and about related work (what solutions for the problem already exist). Where appropriate, reference scientific work conducted by other researchers. For example, the work done by Demšar et al. \cite{Demsar2016BalancedMixture} is very important for our project. The abbreviation et al. is for et alia, which in latin means and others, we use this abbreviation when there are more than two authors of the work we are citing. If there are two authors (or if there is a single author) we just write down their surnames. For example, the work done by Demšar and Lebar Bajec \cite{Demsar2017LinguisticEvolution} is also important for successful completion of our project.
+	Because of a growing concern over declining literacy rates among young readers, innovative solutions are required to engage and improve their reading habits. This project introduces a corpus analysis of character conversations within suggested stories and novels, aiming to understand how these interactions can be leveraged to create engaging educational tools. By analyzing textual conversations between characters, we seek to develop a framework for creating personaBots, conversational agents that embody characters from novels. These personaBots are intended to motivate young readers by allowing them to interact with the characters in a meaningful way, helping to make reading a more appealing and engaging activity. Through this analysis, we aim to research the effort of enhancing literacy skills, making reading a more enjoyable and frequent part of young people's lives.
 
 
 %------------------------------------------------
 
-\section*{Methods}
+\section*{Related work}
 
-Use the Methods section to describe what you did an how you did it -- in what way did you prepare the data, what algorithms did you use, how did you test various solutions ... Provide all the required details for a reproduction of your work.
+We reviewed the provided literature \cite{alaimi2020pedagogical, bogaerds2022textbooks, engel2015competitive, goldberg2013alternative, murray2021literacy, neuman2023data, nielen2018digital, papaioannou2022designing, wu2023openicl, zwaan1998constructing} and looked at additional literature to get a better grasp of what is currently being done in the field and what we can do to improve it.
 
-Below are \LaTeX examples of some common elements that you will probably need when writing your report (e.g. figures, equations, lists, code examples ...).
+The \cite{neuman2023data} paper presents PEDANT, a novel approach for data augmentation in modeling human personality, leveraging generative pre-trained models and domain expertise to generate high-quality synthetic data for rare personality types, exemplified through the "Dexter Machine". 
 
+The paper \cite{li2019follow} presents an approach towards constructing human-like dialogue agents by introducing Human Level Attributes (HLAs) based on tropes. These tropes, derived from recurring character traits in fiction recognized by viewers, facilitate the development of dialogue agents that mimic the personalities of fictional characters. The authors propose a dataset combining detailed HLA data with character-specific dialogue, enabling agents to learn language styles from specific characters through HLAs. They introduce ALOHA, a three-component system consisting of character space mapping, character community detection, and language style recovery, which collectively build a character-specific language model. 
 
-\subsection*{Equations}
+We came across an intriguing article \cite{paiva1999enriching}, which integrates pedagogical agents with personality theory to incorporate emotion and emotional states. They also emphasised that believability is crucial in developing persona-like pedagogical agents, as learners expect human-like behavior such as emotional engagement and empathy, and failure to meet these expectations diminishes trust and ruins the interaction. We will try to make our persona bots follow the same principles.
 
-You can write equations inline, e.g. $\cos\pi=-1$, $E = m \cdot c^2$ and $\alpha$, or you can include them as separate objects. The Bayes’s rule is stated mathematically as:
+We also came across an article \cite{lewis2020retrieval} that provides valuable insights into enhancing language models with external knowledge, specifically through a Retrieval-Augmented Generation (RAG) method. This approach integrates a pre-trained language model with a vast external knowledge base from Wikipedia, significantly enriching the model's outputs in knowledge-intensive tasks. Incorporating this method into our project could substantially elevate the effectiveness of our persona bots. By leveraging this technology, the bots can offer more accurate, contextually relevant, and engaging interactions, thereby fostering a deeper literary engagement and addressing the ongoing literacy crisis.
 
-\begin{equation}
-	P(A|B) = \frac{P(B|A)P(A)}{P(B)},
-	\label{eq:bayes}
-\end{equation}
+We've considered integrating the insights from an article \cite{jiang2023active} that introduces the Forward-Looking Active Retrieval augmented generation (FLARE) method. This innovative approach, which enhances language models by actively retrieving relevant information during the text generation process, could significantly enrich our persona bots. By implementing FLARE, we aim to empower the bots with the ability to provide more contextually rich, accurate, and engaging interactions.
 
-where $A$ and $B$ are some events. You can also reference it -- the equation \ref{eq:bayes} describes the Bayes's rule.
+We also compared two of the most commonly used services capable of producing quick, customized persona bots from novels: ChatGPT \cite{openai2022} and Character AI \cite{characterai}. Character AI offers the option to create a character from your description, a feature also available with ChatGPT. Both services provide answers of similar quality using this approach. Subsequently, we tested both services using a well-established fictional character from a novel, arguably the most famous one, Harry Potter. We obtained the most popular Harry Potter character from Character AI \cite{characterai-chat} and requested ChatGPT to act as Harry Potter when responding. We posed the following questions to both:
 
-\subsection*{Lists}
-
-We can insert numbered and bullet lists:
-
-% the [noitemsep] option makes the list more compact
-\begin{enumerate}[noitemsep] 
-	\item First item in the list.
-	\item Second item in the list.
-	\item Third item in the list.
-\end{enumerate}
-
-\begin{itemize}[noitemsep] 
-	\item First item in the list.
-	\item Second item in the list.
-	\item Third item in the list.
+\begin{itemize}
+    \item What was the most horrible experience you ever had?
+    \item When were you born?
+    \item Who are your best friends?
 \end{itemize}
 
-We can use the description environment to define or describe key terms and phrases.
+Character AI's response to the first question did not include actual data (his ex-girlfriend was cheating on him), while ChatGPT provided a much more believable answer (his friend Cedric Diggory dying in front of him). Additionally, we found the use of parentheticals in Character AI's responses to be unnecessary. ChatGPT tends to provide longer answers, typically packed with more information about characters compared to Character AI.
 
-\begin{description}
-	\item[Word] What is a word?.
-	\item[Concept] What is a concept?
-	\item[Idea] What is an idea?
-\end{description}
+The responses provided by both services were satisfactory in terms of accuracy and demonstrated a level of human-like understanding.
 
+Based on our findings, we concluded that we would prefer our persona bots to resemble ChatGPT rather than Character AI.
 
-\subsection*{Random text}
+\section*{Data}
 
-This text is inserted only to make this template look more like a proper report. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit dictum facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam convallis tellus velit, quis ornare ipsum aliquam id. Maecenas tempus mauris sit amet libero elementum eleifend. Nulla nunc orci, consectetur non consequat ac, consequat non nisl. Aenean vitae dui nec ex fringilla malesuada. Proin elit libero, faucibus eget neque quis, condimentum laoreet urna. Etiam at nunc quis felis pulvinar dignissim. Phasellus turpis turpis, vestibulum eget imperdiet in, molestie eget neque. Curabitur quis ante sed nunc varius dictum non quis nisl. Donec nec lobortis velit. Ut cursus, libero efficitur dictum imperdiet, odio mi fermentum dui, id vulputate metus velit sit amet risus. Nulla vel volutpat elit. Mauris ex erat, pulvinar ac accumsan sit amet, ultrices sit amet turpis.
+We have discovered the BookCorpus, a publicly available dataset compiled by Soskkobayashi \cite{soskkobayashi2018bookcorpus}, containing a collection of novels authored by unpublished writers. This dataset consists 11,038 books, totaling approximately 74 million sentences and 1 billion words, spanning across 16 different sub-genres like Romance, Historical, and Adventure. 
 
-Phasellus in ligula nunc. Vivamus sem lorem, malesuada sed pretium quis, varius convallis lectus. Quisque in risus nec lectus lobortis gravida non a sem. Quisque et vestibulum sem, vel mollis dolor. Nullam ante ex, scelerisque ac efficitur vel, rhoncus quis lectus. Pellentesque scelerisque efficitur purus in faucibus. Maecenas vestibulum vulputate nisl sed vestibulum. Nullam varius turpis in hendrerit posuere.
+We also found an alternative, The Gutenberg dataset \cite{gutenbergBooks} that comprises over 15,000 book texts, along with their respective authors and titles. 
 
+Our plan is to initially pretrain our model using one of the datasets and fine-tune it on specific novels and characters of interest. By adopting this approach, we aim to assess whether this sequential training methodology yields improved performance. As we rely on novel and story recommendations from our advisor, our strategy may evolve based on the provided data.
 
-\subsection*{Figures}
+\subsection*{Preprocessing}
 
-You can insert figures that span over the whole page, or over just a single column. The first one, \figurename~\ref{fig:column}, is an example of a figure that spans only across one of the two columns in the report.
+Our preprocessing does not have to be focused on correcting the text, as our data will come from books that have already been professionally proofread. 
 
-\begin{figure}[ht]\centering
-	\includegraphics[width=\linewidth]{single_column.pdf}
-	\caption{\textbf{A random visualization.} This is an example of a figure that spans only across one of the two columns.}
-	\label{fig:column}
-\end{figure}
+\begin{itemize}
+    \item \textbf{Text extraction} - exclude irrelevant data like page numbers, headers, footers
+    \item \textbf{Noise removal} - remove irrelevant data like special characters, white spaces and consistent case (lowercase usually)
+    \item \textbf{Tokenization} - split text into sentences and words
+    \item \textbf{Part-of-speech (POS) tagging} -  assign parts of speech to each word (e.g. noun, verb, adjective)
+    \item \textbf{Lemmatization} - convert words to their base or root form
+    \item \textbf{Named entity recognition (NER)} - identify and tag named entities (characters, places, etc.)
+    \item \textbf{Sentiment analysis} - determine sentiment expressed in sentences or paragraphs. 
+\end{itemize}
 
-On the other hand, \figurename~\ref{fig:whole} is an example of a figure that spans across the whole page (across both columns) of the report.
+The most important part would be \textbf{dialogue extraction}. We want to try and extract dialogue from the given text and assign it to the character that said it, following a similar principle that was used in this article \cite{li2019follow}. 
 
-% \begin{figure*} makes the figure take up the entire width of the page
-\begin{figure*}[ht]\centering 
-	\includegraphics[width=\linewidth]{whole_page.pdf}
-	\caption{\textbf{Visualization of a Bayesian hierarchical model.} This is an example of a figure that spans the whole width of the report.}
-	\label{fig:whole}
-\end{figure*}
+\section*{Project idea}
 
+At present, our understanding of advanced language processing machine learning models is limited. Therefore, we have opted to explore the best options for preprocessing, feature extraction, modeling, and evaluation through experimental testing.
 
-\subsection*{Tables}
+Initially, our objective is to construct a basic model to familiarize ourselves with the dataset and algorithms used. We will start with preprocessed text and then proceed with a pretrained model from the HuggingFace library \cite{wolf2019huggingface}. Our plan involves constructing a model for each novel or character, based on our requirements, and subsequently fine-tuning that model using retrieval augmented generation (RAG) \cite{lewis2020retrieval, jiang2023active} or by implementing more efficient vector searching or similarity computation approaches.
 
-Use the table environment to insert tables.
+For evaluation, we will try comparing our model's output with that of other similarly functioning models. We will also assess if our model possesses basic knowledge about characters, such as their age, appearance, etc. Furthermore, we will test its capability to simulate human conversations effectively.
 
-\begin{table}[hbt]
-	\caption{Table of grades.}
-	\centering
-	\begin{tabular}{l l | r}
-		\toprule
-		\multicolumn{2}{c}{Name} \\
-		\cmidrule(r){1-2}
-		First name & Last Name & Grade \\
-		\midrule
-		John & Doe & $7.5$ \\
-		Jane & Doe & $10$ \\
-		Mike & Smith & $8$ \\
-		\bottomrule
-	\end{tabular}
-	\label{tab:label}
-\end{table}
+We have identified the following key aspects for our persona bot's functionality:
 
+\begin{itemize}[label=$\bullet$]
+    \item \textbf{Human-like Interaction} - Our bot's responses should closely resemble those of humans. To achieve this, we intend to select a pretrained model with such capabilities.
+    \item \textbf{Self-Knowledge} - Our bot should possess information about itself or specific characters, including their manner of speech and relevant details. We aim to accomplish this through methods like RAG.
+\end{itemize}
 
-\subsection*{Code examples}
-
-You can also insert short code examples. You can specify them manually, or insert a whole file with code. Please avoid inserting long code snippets, advisors will have access to your repositories and can take a look at your code there. If necessary, you can use this technique to insert code (or pseudo code) of short algorithms that are crucial for the understanding of the manuscript.
-
-\lstset{language=Python}
-\lstset{caption={Insert code directly from a file.}}
-\lstset{label={lst:code_file}}
-\lstinputlisting[language=Python]{code/example.py}
-
-\lstset{language=R}
-\lstset{caption={Write the code you want to insert.}}
-\lstset{label={lst:code_direct}}
-\begin{lstlisting}
-import(dplyr)
-import(ggplot)
-
-ggplot(diamonds,
-	   aes(x=carat, y=price, color=cut)) +
-  geom_point() +
-  geom_smooth()
-\end{lstlisting}
-
-%------------------------------------------------
-
-\section*{Results}
-
-Use the results section to present the final results of your work. Present the results in a objective and scientific fashion. Use visualisations to convey your results in a clear and efficient manner. When comparing results between various techniques use appropriate statistical methodology.
-
-\subsection*{More random text}
-
-This text is inserted only to make this template look more like a proper report. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit dictum facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam convallis tellus velit, quis ornare ipsum aliquam id. Maecenas tempus mauris sit amet libero elementum eleifend. Nulla nunc orci, consectetur non consequat ac, consequat non nisl. Aenean vitae dui nec ex fringilla malesuada. Proin elit libero, faucibus eget neque quis, condimentum laoreet urna. Etiam at nunc quis felis pulvinar dignissim. Phasellus turpis turpis, vestibulum eget imperdiet in, molestie eget neque. Curabitur quis ante sed nunc varius dictum non quis nisl. Donec nec lobortis velit. Ut cursus, libero efficitur dictum imperdiet, odio mi fermentum dui, id vulputate metus velit sit amet risus. Nulla vel volutpat elit. Mauris ex erat, pulvinar ac accumsan sit amet, ultrices sit amet turpis.
-
-Phasellus in ligula nunc. Vivamus sem lorem, malesuada sed pretium quis, varius convallis lectus. Quisque in risus nec lectus lobortis gravida non a sem. Quisque et vestibulum sem, vel mollis dolor. Nullam ante ex, scelerisque ac efficitur vel, rhoncus quis lectus. Pellentesque scelerisque efficitur purus in faucibus. Maecenas vestibulum vulputate nisl sed vestibulum. Nullam varius turpis in hendrerit posuere.
-
-Nulla rhoncus tortor eget ipsum commodo lacinia sit amet eu urna. Cras maximus leo mauris, ac congue eros sollicitudin ac. Integer vel erat varius, scelerisque orci eu, tristique purus. Proin id leo quis ante pharetra suscipit et non magna. Morbi in volutpat erat. Vivamus sit amet libero eu lacus pulvinar pharetra sed at felis. Vivamus non nibh a orci viverra rhoncus sit amet ullamcorper sem. Ut nec tempor dui. Aliquam convallis vitae nisi ac volutpat. Nam accumsan, erat eget faucibus commodo, ligula dui cursus nisi, at laoreet odio augue id eros. Curabitur quis tellus eget nunc ornare auctor.
-
-
-%------------------------------------------------
-
-\section*{Discussion}
-
-Use the Discussion section to objectively evaluate your work, do not just put praise on everything you did, be critical and exposes flaws and weaknesses of your solution. You can also explain what you would do differently if you would be able to start again and what upgrades could be done on the project in the future.
-
-
-%------------------------------------------------
-
-\section*{Acknowledgments}
-
-Here you can thank other persons (advisors, colleagues ...) that contributed to the successful completion of your project.
-
+As we progress, our aim is to enhance our results through iterative development, conducting experiments, and gaining deeper insights into our project understanding.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
