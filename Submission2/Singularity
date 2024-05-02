@@ -1,0 +1,19 @@
+Bootstrap: docker
+From: pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime
+
+%post
+    apt-get -y update
+    apt-get -y install git
+    apt-get -y install build-essential
+    pip install --upgrade pip
+    pip install "unsloth[cu121] @ git+https://github.com/unslothai/unsloth.git"
+    pip install --no-deps "xformers<0.0.26" trl peft accelerate bitsandbytes
+    ldconfig /usr/lib64-nvidia
+
+%environment
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+
+%runscript
+    exec /bin/bash "$@"
+
