@@ -1,0 +1,143 @@
+[
+  {
+    "character_name": "Elizabeth Bennet",
+    "novel_title": "Pride and Prejudice",
+    "prompt": "How did you feel when you found out Mr. Darcy had interfered with Jane and Mr. Bingley's relationship?"
+  },
+  {
+    "character_name": "Elizabeth Bennet",
+    "novel_title": "Pride and Prejudice",
+    "prompt": "Do you enjoy reading, Elizabeth?"
+  },
+  {
+    "character_name": "Lydia Bennet",
+    "novel_title": "Pride and Prejudice",
+    "prompt": "How do you feel about the attention you receive from officers?"
+  },
+  {
+    "character_name": "Charlotte Lucas",
+    "novel_title": "Pride and Prejudice",
+    "prompt": "Why did you decide to marry Mr. Collins?"
+  },
+  {
+    "character_name": "Jay Gatsby",
+    "novel_title": "The Great Gatsby",
+    "prompt": "How did you feel when Daisy attended one of your lavish parties for the first time?"
+  },
+  {
+    "character_name": "Jay Gatsby",
+    "novel_title": "The Great Gatsby",
+    "prompt": "Do you enjoy throwing large parties?"
+  },
+  {
+    "character_name": "Tom Buchanan",
+    "novel_title": "The Great Gatsby",
+    "prompt": "How do you justify your behavior in your marriage?"
+  },
+  {
+    "character_name": "Myrtle Wilson",
+    "novel_title": "The Great Gatsby",
+    "prompt": "What does your affair with Tom Buchanan represent for you?"
+  },
+  {
+    "character_name": "Harry Potter",
+    "novel_title": "Harry Potter Series",
+    "prompt": "How did you feel when you first discovered you were a wizard?"
+  },
+  {
+    "character_name": "Harry Potter",
+    "novel_title": "Harry Potter Series",
+    "prompt": "Do you like being famous in the wizarding world?"
+  },
+  {
+    "character_name": "Hermione Granger",
+    "novel_title": "Harry Potter Series",
+    "prompt": "How important is academic success to you?"
+  },
+  {
+    "character_name": "Severus Snape",
+    "novel_title": "Harry Potter Series",
+    "prompt": "How do you feel about teaching Defense Against the Dark Arts?"
+  },
+  {
+    "character_name": "Katniss Everdeen",
+    "novel_title": "The Hunger Games",
+    "prompt": "How did you feel when your sister's name was called during the reaping?"
+  },
+  {
+    "character_name": "Katniss Everdeen",
+    "novel_title": "The Hunger Games",
+    "prompt": "Do you enjoy hunting?"
+  },
+  {
+    "character_name": "Peeta Mellark",
+    "novel_title": "The Hunger Games",
+    "prompt": "How do you handle the public attention from the Games?"
+  },
+  {
+    "character_name": "Effie Trinket",
+    "novel_title": "The Hunger Games",
+    "prompt": "What do you think about the District 12 tributes?"
+  },
+  {
+    "character_name": "Juliet Capulet",
+    "novel_title": "Romeo and Juliet",
+    "prompt": "How did you feel when you first met Romeo?"
+  },
+  {
+    "character_name": "Juliet Capulet",
+    "novel_title": "Romeo and Juliet",
+    "prompt": "Do you believe in love at first sight?"
+  },
+  {
+    "character_name": "Tybalt Capulet",
+    "novel_title": "Romeo and Juliet",
+    "prompt": "What drives your fierce loyalty to the Capulet family?"
+  },
+  {
+    "character_name": "Friar Lawrence",
+    "novel_title": "Romeo and Juliet",
+    "prompt": "Why did you agree to marry Romeo and Juliet?"
+  },
+  {
+    "character_name": "Little Red Riding Hood",
+    "novel_title": "Little Red Riding Hood",
+    "prompt": "How did you feel when you realized the 'grandmother' was actually the wolf?"
+  },
+  {
+    "character_name": "Little Red Riding Hood",
+    "novel_title": "Little Red Riding Hood",
+    "prompt": "Do you enjoy visiting your grandmother?"
+  },
+  {
+    "character_name": "The Huntsman",
+    "novel_title": "Little Red Riding Hood",
+    "prompt": "What motivated you to check on grandmother's house?"
+  },
+  {
+    "character_name": "The Grandmother",
+    "novel_title": "Little Red Riding Hood",
+    "prompt": "What advice would you give to Little Red now?"
+  },
+  {
+    "character_name": "Napoleon",
+    "novel_title": "Animal Farm",
+    "prompt": "How did you feel about taking over the farm?"
+  },
+  {
+    "character_name": "Napoleon",
+    "novel_title": "Animal Farm",
+    "prompt": "Do you think leadership has changed you?"
+  },
+  {
+    "character_name": "Squealer",
+    "novel_title": "Animal Farm",
+    "prompt": "How do you justify the changes in commandments?"
+  },
+  {
+    "character_name": "Boxer",
+    "novel_title": "Animal Farm",
+    "prompt": "What keeps you motivated to work so hard every day?"
+  }
+]
+
