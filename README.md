@@ -10,7 +10,9 @@ In folder *Submission1* you can find the report consisting of:
 
 ## Submission 2
 
-//TODO
+In folder *Submission2* you can find the progress report of the idea we tried and tested and the further direction of work. Since we are using a model that is too big to run locally the only way to prompt it is through using the SLING. 
+
+In file *README_sub2.md* you can find instructions on how to do that.
 
 ## Submission 3
 

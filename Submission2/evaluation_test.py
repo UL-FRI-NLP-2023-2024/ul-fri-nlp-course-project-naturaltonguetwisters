@@ -57,3 +57,4 @@ for test in tests:
 
 
 print("\n=== End of inference test. ===")
+

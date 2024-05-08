@@ -9,6 +9,6 @@
 #SBATCH --time=00:30:00
 #SBATCH --output=logs/llama-train-run-1-%J.out
 #SBATCH --error=logs/llama-train-run-1-%J.err
-#SBATCH --job-name="NLP Llama train - Alpaca clean dataset"
+#SBATCH --job-name="Evaluation Llama"
 
-srun singularity exec --nv nlp_pt.sif python main.py
+srun singularity exec --nv nlp_v3.sif python evaluation_test.py
