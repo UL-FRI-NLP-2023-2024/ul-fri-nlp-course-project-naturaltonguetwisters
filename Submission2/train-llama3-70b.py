@@ -104,5 +104,5 @@ print(f"Peak reserved memory % of max memory = {used_percentage} %.")
 print(f"Peak reserved memory for training % of max memory = {lora_percentage} %.")
 
 # Save model
-model.save_pretrained("llama3_70b_alpaca_clean")
-tokenizer.save_pretrained("llama3_70b_alpaca_clean")
+model.save_pretrained("llama_alpaca_clean")
+tokenizer.save_pretrained("llama_alpaca_clean")

@@ -4,7 +4,7 @@ load_in_4bit = True
 
 from unsloth import FastLanguageModel
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name = "llama3_70b_alpaca_clean",
+    model_name = "llama_alpaca_clean",
     max_seq_length = max_seq_length,
     dtype = dtype,
     load_in_4bit = load_in_4bit,
