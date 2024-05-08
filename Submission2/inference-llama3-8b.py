@@ -4,7 +4,7 @@ load_in_4bit = True
 
 from unsloth import FastLanguageModel
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name = "llama_alpaca_clean",
+    model_name = "llama3_8b_alpaca_clean",
     max_seq_length = max_seq_length,
     dtype = dtype,
     load_in_4bit = load_in_4bit,
@@ -38,7 +38,7 @@ def ask_question(character_name, novel_title, prompt):
     return response_text[0].split('### Response:\n')[1].replace('<|eot_id|>', '')
 
 
-print("=== Start of inference test. ===\n")
+print("\n")
 
 import json
 with open("tests.json", "r") as f:
@@ -53,7 +53,5 @@ for test in tests:
     response = ask_question(character_name, novel_title, prompt)
     print("Response:")
     print(response)
+    print('---------------')
     print()
-
-
-print("\n=== End of inference test. ===")

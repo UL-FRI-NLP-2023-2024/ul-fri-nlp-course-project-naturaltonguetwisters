@@ -88,6 +88,7 @@ max_memory = round(gpu_stats.total_memory / 1024 / 1024 / 1024, 3)
 print(f"GPU = {gpu_stats.name}. Max memory = {max_memory} GB.")
 print(f"{start_gpu_memory} GB of memory reserved.")
 
+# Training
 trainer_stats = trainer.train()
 
 # Memory and time stats
@@ -102,21 +103,6 @@ print(f"Peak reserved memory for training = {used_memory_for_lora} GB.")
 print(f"Peak reserved memory % of max memory = {used_percentage} %.")
 print(f"Peak reserved memory for training % of max memory = {lora_percentage} %.")
 
-
-# Inference
-FastLanguageModel.for_inference(model)
-inputs = tokenizer(
-[
-    alpaca_prompt.format(
-        "Continue the fibonnaci sequence.", # Instruction
-        "1, 1, 2, 3, 5, 8", # Input
-        "", # Output
-    )
-], return_tensors = "pt").to("cuda")
-
-outputs = model.generate(**inputs, max_new_tokens = 64, use_cache = True)
-tokenizer.batch_decode(outputs)
-
 # Save model
-model.save_pretrained("llama_alpaca_clean")
-tokenizer.save_pretrained("llama_alpaca_clean")
+model.save_pretrained("llama3_70b_alpaca_clean")
+tokenizer.save_pretrained("llama3_70b_alpaca_clean")
