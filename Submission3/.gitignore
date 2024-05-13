@@ -1,0 +1,6 @@
+llama3_8b_alpaca_clean/
+llama3_70b_alpaca_clean/
+mistral_7b_v02_alpaca_clean/
+logs
+
+nlp_pt.sif
