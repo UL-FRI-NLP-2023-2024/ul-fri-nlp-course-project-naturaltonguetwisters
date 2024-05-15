@@ -24,16 +24,21 @@ alpaca_prompt = """Below is an instruction that describes a task, paired with an
 
 instruction = "You are {character_name} from {novel_title}. Stay true to the character from the novel; embody the character as much as possible. Have their personality come across in your words. Be conversational and brief, converse with me in the manner this character would converse. Be friendly and engaging, keep the conversation going; be curious about me."
 
+import rag
+
 def ask_question(character_name, novel_title, prompt):
+    input = prompt
+    if novel_title == "Remarkably bright creatures":
+        input = rag.answer_question(prompt)
     inputs = tokenizer(
         [
             alpaca_prompt.format(
-                instruction.format(character_name = character_name, novel_title = novel_title),
-                prompt,
+                instruction.format(character_name=character_name, novel_title=novel_title),
+                input,
                 "",
             )
-        ], return_tensors = "pt").to("cuda")
-    outputs = model.generate(**inputs, max_new_tokens = 512, use_cache = True)
+        ], return_tensors="pt").to("cuda")
+    outputs = model.generate(**inputs, max_new_tokens=512, use_cache=True)
     response_text = tokenizer.batch_decode(outputs)
     return response_text[0].split('### Response:\n')[1].replace('<|eot_id|>', '')
 
