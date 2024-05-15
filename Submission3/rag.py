@@ -65,14 +65,13 @@ embedding = HuggingFaceEmbeddings(
 )
 
 filename = 'Remarkably_Bright_Creatures.txt'
-docs = []
+texts = []
 with open(filename, 'r', encoding='utf-8') as f:
-    docs.extend(f.read())
+    texts.extend(f.read())
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=20)
-all_splits = text_splitter.split_documents(docs)
 
-vectorstore = FAISS.from_documents(all_splits, embedding)
+vectorstore = FAISS.from_texts(texts, embedding)
 
 retriever = vectorstore.as_retriever(
     search_type="similarity",
