@@ -4,4 +4,5 @@ mistral_7b_v02_alpaca_clean/
 logs
 
 nlp_pt.sif
+nlp_pt.sif.old
 nlp_pt_rag.sif
