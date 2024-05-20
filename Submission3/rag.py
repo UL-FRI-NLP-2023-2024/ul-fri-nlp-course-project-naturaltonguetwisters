@@ -84,17 +84,21 @@ retriever = vectorstore.as_retriever(
     k=10,
 )
 
-PROMPT_TEMPLATE = """
+
+PROMPT_TEMPLATE = """Below is an instruction that describes a task, paired with the further context about the story and an input that provides a question. Write a response that appropriately completes the request.
+
+### Instruction:
 You are {character_name} from {novel_title}. Stay true to the character from the novel; embody the character as much as possible. Have their personality come across in your words. Be conversational and brief, converse with me in the manner this character would converse. Be friendly and engaging, keep the conversation going; be curious about me.
 
+### Context:
 ```
 {context}
 ```
 
-### Question:
+### Input:
 {question}
 
-### Answer:
+### Response:
 """
 
 prompt_template = PromptTemplate(
