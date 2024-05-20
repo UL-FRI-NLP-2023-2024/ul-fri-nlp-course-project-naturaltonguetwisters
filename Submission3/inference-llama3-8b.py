@@ -34,7 +34,8 @@ def ask_question(character_name, novel_title, prompt):
     context = ""
     if novel_title == "Make It Black":
         rag_docs = rag.get_docs_makeitblack(character_name, prompt)
-        context = rag_docs
+        for doc in rag_docs:
+            context += doc["page_content"] + "\n"
     inputs = tokenizer(
         [
             alpaca_prompt.format(

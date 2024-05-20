@@ -118,7 +118,6 @@ llm_chain = ConversationalRetrievalChain.from_llm(
 def get_docs_makeitblack(character_name: str, question: str) -> list[str]:
     QUESTION = f"Question for {character_name}:\n{question}"
     docs = vectorstore.similarity_search(QUESTION.format(character_name=character_name, question=question))
-    print(docs)
     return docs
 
 
