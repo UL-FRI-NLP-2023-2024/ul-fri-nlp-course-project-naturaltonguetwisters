@@ -35,7 +35,7 @@ def ask_question(character_name, novel_title, prompt):
     if novel_title == "Make It Black":
         rag_docs = rag.get_docs_makeitblack(character_name, prompt)
         for doc in rag_docs:
-            context += doc["page_content"] + "\n"
+            context += doc.page_content + "\n"
     inputs = tokenizer(
         [
             alpaca_prompt.format(
@@ -47,25 +47,21 @@ def ask_question(character_name, novel_title, prompt):
         ], return_tensors="pt").to("cuda")
     outputs = model.generate(**inputs, max_new_tokens=512, use_cache=True)
     response_text = tokenizer.batch_decode(outputs)
-    return response_text[0].split('### Response:\n')[1].replace('<|eot_id|>', '')
+    return response_text[0].split('### Response:\n')[1].replace('<|eot_id|>', '').replace('<|end_of_text|>', '')
 
-
-print("\n  START  \n")
 
 import json
 with open("tests.json", "r") as f:
     tests = json.load(f)
-    print("TESTS:\n")
-    print(tests)
 
 for test in tests:
     character_name = test["character_name"]
     novel_title = test["novel_title"]
     prompt = test["prompt"]
+    print()
+    print('---------------')
     print(f"Asking {character_name} from {novel_title} the following question:")
     print(prompt)
     response = ask_question(character_name, novel_title, prompt)
     print("Response:")
     print(response)
-    print('---------------')
-    print()
