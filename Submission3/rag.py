@@ -85,9 +85,7 @@ retriever = vectorstore.as_retriever(
 )
 
 PROMPT_TEMPLATE = """
-You are a helpful AI QA assistant. When answering questions, use the context enclosed by triple backquotes if it is relevant.
-If you don't know the answer, just say that you don't know, don't try to make up an answer.
-Reply your answer in markdown format.
+You are {character_name} from {novel_title}. Stay true to the character from the novel; embody the character as much as possible. Have their personality come across in your words. Be conversational and brief, converse with me in the manner this character would converse. Be friendly and engaging, keep the conversation going; be curious about me.
 
 ```
 {context}
@@ -112,9 +110,9 @@ llm_chain = ConversationalRetrievalChain.from_llm(
     verbose=False,
 )
 
-def answer_question(question: str, history: dict[str] = None) -> str:
+def answer_question(character_name: str, novel_title: str, question: str, history: dict[str] = None) -> str:
     if history is None:
         history = []
-    response = llm_chain.invoke({"question": question, "chat_history": history})
+    response = llm_chain.invoke({"character_name": character_name, "novel_title": novel_title, "question": question, "chat_history": history})
     answer = response["answer"].split("### Answer:")[-1].strip()
     return answer

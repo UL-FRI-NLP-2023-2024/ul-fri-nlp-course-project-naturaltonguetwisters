@@ -27,14 +27,15 @@ instruction = "You are {character_name} from {novel_title}. Stay true to the cha
 import rag
 
 def ask_question(character_name, novel_title, prompt):
-    input = prompt
+    rag_answer = prompt
     if novel_title == "Remarkably bright creatures":
-        input = rag.answer_question(prompt)
+        rag_answer = rag.answer_question(character_name, novel_title, prompt)
+        return rag_answer
     inputs = tokenizer(
         [
             alpaca_prompt.format(
                 instruction.format(character_name=character_name, novel_title=novel_title),
-                input,
+                rag_answer,
                 "",
             )
         ], return_tensors="pt").to("cuda")
