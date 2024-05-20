@@ -70,7 +70,7 @@ embedding = HuggingFaceEmbeddings(
     model_kwargs={"device": "cuda"},
 )
 
-filename = 'Remarkably_Bright_Creatures.txt'
+filename = 'MakeItBlack.txt'
 texts = []
 with open(filename, 'r', encoding='utf-8') as f:
     texts.extend(f.read())

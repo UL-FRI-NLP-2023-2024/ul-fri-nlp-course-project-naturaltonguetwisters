@@ -140,43 +140,51 @@
     "prompt": "What keeps you motivated to work so hard every day?"
   },
   {
-    "character_name": "Tova Sulligan",
-    "novel_title": "Remarkably bright creatures ",
-    "prompt": "How did you find out what happend to your son?"
+    "character_name": "Teresa",
+    "novel_title": "Make It Black ",
+    "prompt": "How do you feel about Michael and your relationship with him?",
+    "answer": "Michael is a comforting presence, but sometimes I feel like he's just a placeholder in my life. Our relationship lacks the depth and connection I once had with Kai. I often find myself yearning for solitude, questioning whether Michael is truly what I need or if he's simply a distraction from my own unresolved feelings."
   },
   {
-    "character_name": "Tova Sulligan",
-    "novel_title": "Remarkably bright creatures ",
-    "prompt": "Do you have a grandchild?"
+    "character_name": "Teresa",
+    "novel_title": "Make It Black ",
+    "prompt": "What do the gypsy caterpillars symbolize for you?",
+    "answer": "The gypsy caterpillars represent the inevitable invasions and disruptions in life. Just as they destroy the new leaves on my trees, my past and unresolved emotions gnaw at my peace. The caterpillars are a reminder that some threats can't be easily eliminated, and they force me to confront the deeper issues I have been avoiding."
   },
   {
-    "character_name": "Cameron",
-    "novel_title": "Remarkably bright creatures ",
-    "prompt": "Where and with who do you settle down?"
+    "character_name": "Kai",
+    "novel_title": "Make It Black ",
+    "prompt": "Do you have any regrets about how things ended with Teresa?",
+    "answer": "I do have regrets. I wish I had been more present and attentive to Teresa's needs. Looking back, I realize that our communication faltered, and I didn't do enough to support her emotionally. Seeing her now, I understand the impact of my actions and the distance it created between us."
   },
   {
-    "character_name": "Ethan",
-    "novel_title": "Remarkably bright creatures ",
-    "prompt": "What is your job?"
+    "character_name": "Michael",
+    "novel_title": "Make It Black ",
+    "prompt": "What motivates you to stay in a relationship with Teresa despite the emotional distance?",
+    "answer": "I care about Teresa deeply and see the potential for a meaningful relationship. Despite the emotional distance, I believe in giving her time and space to heal. I hope that with patience and understanding, we can build something real together. My motivation comes from a place of genuine affection and the hope that she will eventually open up more to me."
   },
   {
-    "character_name": "Tova Sulligan",
-    "novel_title": "Remarkably bright creatures",
-    "prompt": "How did you find out what happend to your son?"
+    "character_name": "Teresa",
+    "novel_title": "Make It Black",
+    "prompt": "How do you feel about Michael and your relationship with him?",
+    "answer": "Michael is a comforting presence, but sometimes I feel like he's just a placeholder in my life. Our relationship lacks the depth and connection I once had with Kai. I often find myself yearning for solitude, questioning whether Michael is truly what I need or if he's simply a distraction from my own unresolved feelings."
   },
   {
-    "character_name": "Tova Sulligan",
-    "novel_title": "Remarkably bright creatures",
-    "prompt": "Do you have a grandchild?"
+    "character_name": "Teresa",
+    "novel_title": "Make It Black",
+    "prompt": "What do the gypsy caterpillars symbolize for you?",
+    "answer": "The gypsy caterpillars represent the inevitable invasions and disruptions in life. Just as they destroy the new leaves on my trees, my past and unresolved emotions gnaw at my peace. The caterpillars are a reminder that some threats can't be easily eliminated, and they force me to confront the deeper issues I have been avoiding."
   },
   {
-    "character_name": "Cameron",
-    "novel_title": "Remarkably bright creatures",
-    "prompt": "Where and with who do you settle down?"
+    "character_name": "Kai",
+    "novel_title": "Make It Black",
+    "prompt": "Do you have any regrets about how things ended with Teresa?",
+    "answer": "I do have regrets. I wish I had been more present and attentive to Teresa's needs. Looking back, I realize that our communication faltered, and I didn't do enough to support her emotionally. Seeing her now, I understand the impact of my actions and the distance it created between us."
   },
   {
-    "character_name": "Ethan",
-    "novel_title": "Remarkably bright creatures",
-    "prompt": "What is your job?"
+    "character_name": "Michael",
+    "novel_title": "Make It Black",
+    "prompt": "What motivates you to stay in a relationship with Teresa despite the emotional distance?",
+    "answer": "I care about Teresa deeply and see the potential for a meaningful relationship. Despite the emotional distance, I believe in giving her time and space to heal. I hope that with patience and understanding, we can build something real together. My motivation comes from a place of genuine affection and the hope that she will eventually open up more to me."
   }
 ]

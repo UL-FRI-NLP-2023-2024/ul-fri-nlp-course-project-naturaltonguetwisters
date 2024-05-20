@@ -28,7 +28,7 @@ import rag
 
 def ask_question(character_name, novel_title, prompt):
     rag_answer = prompt
-    if novel_title == "Remarkably bright creatures":
+    if novel_title == "Make It Black":
         rag_answer = rag.answer_question(character_name, novel_title, prompt)
         return rag_answer
     inputs = tokenizer(
