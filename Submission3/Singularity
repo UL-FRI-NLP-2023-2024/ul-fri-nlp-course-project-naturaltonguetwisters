@@ -11,7 +11,10 @@ From: pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime
     pip install numpy pandas scikit-learn
     pip install trl transformers accelerate
     pip install git+https://github.com/huggingface/peft.git
+    pip install huggingface_hub
     pip install datasets bitsandbytes langchain sentence-transformers
+    pip install langchain-community langchain-core
+    pip install faiss-gpu
     pip install beautifulsoup4 lxml
     ldconfig /usr/lib64-nvidia
 

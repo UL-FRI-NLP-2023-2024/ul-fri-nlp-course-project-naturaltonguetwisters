@@ -10,7 +10,13 @@ from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
 from langchain_community.llms.huggingface_pipeline import HuggingFacePipeline
 from langchain_community.vectorstores.faiss import FAISS
 
-LLM_MODEL = "llama3_8b_alpaca_clean"
+from huggingface_hub import login
+from constants import huggingface_token
+
+login(token = huggingface_token, add_to_git_credential = True)
+
+#LLM_MODEL = "llama3_8b_alpaca_clean"
+LLM_MODEL = "mistralai/Mistral-7B-Instruct-v0.2"
 device = f"cuda:{torch.cuda.current_device()}"
 
 bnb_config = transformers.BitsAndBytesConfig(
