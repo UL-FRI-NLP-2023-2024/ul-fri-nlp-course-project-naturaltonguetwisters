@@ -11,9 +11,12 @@ model, tokenizer = FastLanguageModel.from_pretrained(
 )
 FastLanguageModel.for_inference(model)
 
-alpaca_prompt = """Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+alpaca_prompt = """Below is an instruction that describes a task, paired with the further context about the story and an input that provides a question. Write a response that appropriately completes the request.
 
 ### Instruction:
+{}
+
+### Context:
 {}
 
 ### Input:
@@ -27,15 +30,17 @@ instruction = "You are {character_name} from {novel_title}. Stay true to the cha
 import rag
 
 def ask_question(character_name, novel_title, prompt):
-    rag_answer = prompt
+    input = prompt
+    context = ""
     if novel_title == "Make It Black":
-        rag_answer = rag.answer_question(character_name, novel_title, prompt)
-        return rag_answer
+        rag_docs = rag.get_docs_makeitblack(character_name, prompt)
+        context = rag_docs
     inputs = tokenizer(
         [
             alpaca_prompt.format(
                 instruction.format(character_name=character_name, novel_title=novel_title),
-                rag_answer,
+                context,
+                input,
                 "",
             )
         ], return_tensors="pt").to("cuda")

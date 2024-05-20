@@ -5,6 +5,7 @@ import torch
 import transformers
 from langchain.chains.conversational_retrieval.base import ConversationalRetrievalChain
 from langchain.prompts import PromptTemplate
+from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
 from langchain_community.llms.huggingface_pipeline import HuggingFacePipeline
@@ -71,13 +72,13 @@ embedding = HuggingFaceEmbeddings(
 )
 
 filename = 'MakeItBlack.txt'
-texts = []
-with open(filename, 'r', encoding='utf-8') as f:
-    texts.extend(f.read())
 
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=20)
+loader = TextLoader(filename)
+data = loader.load()
 
-vectorstore = FAISS.from_texts(texts, embedding)
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+all_splits = text_splitter.split_documents(data)
+vectorstore = FAISS.from_documents(documents=all_splits, embedding=embedding)
 
 retriever = vectorstore.as_retriever(
     search_type="similarity",
@@ -113,6 +114,13 @@ llm_chain = ConversationalRetrievalChain.from_llm(
     combine_docs_chain_kwargs={"prompt": prompt_template},
     verbose=False,
 )
+
+def get_docs_makeitblack(character_name: str, question: str) -> list[str]:
+    QUESTION = f"Question for {character_name}:\n{question}"
+    docs = vectorstore.similarity_search(QUESTION.format(character_name=character_name, question=question))
+    print(docs)
+    return docs
+
 
 def answer_question(character_name: str, novel_title: str, question: str, history: dict[str] = None) -> str:
     if history is None:
