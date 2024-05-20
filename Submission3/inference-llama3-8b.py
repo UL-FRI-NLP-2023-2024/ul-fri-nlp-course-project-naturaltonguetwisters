@@ -43,11 +43,13 @@ def ask_question(character_name, novel_title, prompt):
     return response_text[0].split('### Response:\n')[1].replace('<|eot_id|>', '')
 
 
-print("\n")
+print("\n  START  \n")
 
 import json
 with open("tests.json", "r") as f:
     tests = json.load(f)
+    print("TESTS:\n")
+    print(tests)
 
 for test in tests:
     character_name = test["character_name"]

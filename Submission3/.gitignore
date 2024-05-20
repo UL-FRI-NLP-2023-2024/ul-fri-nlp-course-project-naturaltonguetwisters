@@ -6,3 +6,6 @@ logs
 nlp_pt.sif
 nlp_pt.sif.old
 nlp_pt_rag.sif
+
+test.py
+jobs.txt
