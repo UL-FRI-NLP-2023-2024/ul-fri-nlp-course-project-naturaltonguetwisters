@@ -3,11 +3,6 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores.faiss import FAISS
 
-from huggingface_hub import login
-from constants import huggingface_token
-
-login(token = huggingface_token, add_to_git_credential = True)
-
 
 EMBED_MODEL = "sentence-transformers/all-mpnet-base-v2"
 
