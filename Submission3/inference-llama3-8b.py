@@ -49,6 +49,7 @@ def ask_question(character_name, novel_title, prompt):
     response_text = tokenizer.batch_decode(outputs)
     return response_text[0].split('### Response:\n')[1].replace('<|eot_id|>', '').replace('<|end_of_text|>', '')
 
+print()
 
 import json
 with open("tests.json", "r") as f:
